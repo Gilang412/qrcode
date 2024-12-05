@@ -4,11 +4,19 @@ import db from "../../prisma/db";
 
 const generateLoginQRCode = async (req, res) => {
     try {
+
+        const {id} = await req.params
+
         // 1. Generate session ID
         const sessionId = uuidv4(); // ID unik untuk setiap sesi login
 
         // 2. Ambil data akun dari database (misalnya, ambil user pertama sebagai contoh)
-        const account = await db.account.findFirst(); // Bisa disesuaikan dengan logika pencarian akun
+        const account = await db.account.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        }); 
+        // Bisa disesuaikan dengan logika pencarian akun
         
         if (!account) {
             return res.status(404).json({
