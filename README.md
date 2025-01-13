@@ -1,6 +1,6 @@
-# QR Code Backend with Express.js, QRCode, UUID, JWT, and Prisma
+# QR Code Backend with Express.js, QRCode, JWT, and Prisma
 
-This is a backend application for generating and managing QR codes using Express.js. The application also integrates JWT for authentication, UUID for unique identifier generation, and Prisma ORM for database management.
+This is a backend application for generating and managing QR codes using Express.js. The application also integrates JWT for authentication, and Prisma ORM for database management.
 
 ## Features
 * Generate QR Codes dynamically
